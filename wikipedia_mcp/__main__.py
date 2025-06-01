@@ -31,6 +31,13 @@ def main():
         choices=["stdio", "sse"],
         help="Transport protocol for MCP communication (stdio for Claude Desktop, sse for HTTP streaming)"
     )
+    parser.add_argument(
+        "--lang",
+        type=str,
+        default="en",
+        choices=["en", "fr", "de", "it", "es"],
+        help="Language"
+    )
     args = parser.parse_args()
 
     # Configure logging - use basicConfig for simplicity but ensure it goes to stderr
@@ -44,7 +51,7 @@ def main():
     logger = logging.getLogger(__name__)
 
     # Create and start the server
-    server = create_server()
+    server = create_server(args.lang)
     
     # Log startup information using our configured logger
     logger.info("Starting Wikipedia MCP server with %s transport", args.transport)
