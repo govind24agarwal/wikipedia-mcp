@@ -47,7 +47,7 @@ def main():
         stream=sys.stderr,
         force=True  # Override any existing basicConfig
     )
-    
+    logging.getLogger("requests").setLevel(logging.WARNING)
     logger = logging.getLogger(__name__)
 
     # Create and start the server
