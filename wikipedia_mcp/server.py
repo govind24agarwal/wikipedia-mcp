@@ -34,7 +34,7 @@ def create_server(language: str = "en") -> FastMCP:
     @server.tool()
     def get_article(title: str) -> Dict[str, Any]:
         """Get the full content of a Wikipedia article."""
-        logger.info(f"Tool: Getting article: {title}")
+        #logger.info(f"Tool: Getting article: {title}")
         article = wikipedia_client.get_article(title)
         return article
 
@@ -127,7 +127,7 @@ def create_server(language: str = "en") -> FastMCP:
     @server.resource("/article/{title}")
     def article(title: str) -> Dict[str, Any]:
         """Get the full content of a Wikipedia article."""
-        logger.info(f"Getting article: {title}")
+        #logger.info(f"Getting article: {title}")
         article = wikipedia_client.get_article(title)
         return article
 
