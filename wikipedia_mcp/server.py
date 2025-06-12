@@ -18,7 +18,7 @@ def create_server() -> FastMCP:
     )
 
     # Initialize Wikipedia client
-    wikipedia_client = WikipediaClient(language)
+    wikipedia_client = WikipediaClient()
 
     # Register tools
     @server.tool()
