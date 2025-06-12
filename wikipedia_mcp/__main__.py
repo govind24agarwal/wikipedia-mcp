@@ -54,7 +54,7 @@ def main():
     server = create_server(args.lang)
     
     # Log startup information using our configured logger
-    logger.info("Starting Wikipedia MCP server with %s transport", args.transport)
+    #logger.info("Starting Wikipedia MCP server with %s transport", args.transport)
     
     if args.transport != "stdio":
         config_template = """
@@ -66,10 +66,10 @@ def main():
           }
         }
         """
-        logger.info("To use with Claude Desktop, configure claude_desktop_config.json with:%s", config_template)
+        #logger.info("To use with Claude Desktop, configure claude_desktop_config.json with:%s", config_template)
     else:
-        logger.info("Using stdio transport - suppressing direct stdout messages for MCP communication.")
-        logger.info("To use with Claude Desktop, ensure 'wikipedia-mcp' command is in your claude_desktop_config.json.")
+        #logger.info("Using stdio transport - suppressing direct stdout messages for MCP communication.")
+        #logger.info("To use with Claude Desktop, ensure 'wikipedia-mcp' command is in your claude_desktop_config.json.")
     
     server.run(transport=args.transport)
 
