@@ -8,6 +8,7 @@ from typing import Dict, List, Optional, Any
 from mcp.server.fastmcp import FastMCP
 from wikipedia_mcp.wikipedia_client import WikipediaClient
 
+logging.getLogger("requests").setLevel(logging.WARNING)
 logger = logging.getLogger(__name__)
 
 def create_server(language: str = "en") -> FastMCP:
