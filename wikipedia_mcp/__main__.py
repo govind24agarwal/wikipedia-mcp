@@ -35,7 +35,7 @@ def main():
         "--lang",
         type=str,
         default="en",
-        choices=["en", "fr", "de", "it", "es"],
+        choices=["en", "fr", "de", "it", "es", "nl", "pl"],
         help="Language"
     )
     args = parser.parse_args()
