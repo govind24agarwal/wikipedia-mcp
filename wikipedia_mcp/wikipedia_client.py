@@ -7,6 +7,7 @@ import wikipediaapi
 import requests
 from typing import Dict, List, Optional, Any
 
+logging.getLogger("requests").setLevel(logging.WARNING)
 logger = logging.getLogger(__name__)
 
 class WikipediaClient:
